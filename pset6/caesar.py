@@ -1,4 +1,5 @@
-from sys import argv  # import argv
+#!/usr/bin/env python3
+from sys import argv, exit  # import argv
 
 
 def main():
@@ -13,16 +14,18 @@ def main():
             else:
                 text_list.append(i)
 
-        print("ciphertext:", ''.join(text_list))
+        ciphertext = ''.join(text_list)
+        return ciphertext
 
 
 # If 2 command line arguments are entered and the second is a number, the program will run
-    if len(argv) == 2 and argv[1].isdigit():
+    if len(argv) == 2 and argv[1].isdigit() and int(argv[1]) > 0:
         key = int(argv[1])
         text = input("plaintext: ")
-        cipher_text(text, key)
+        print("ciphertext:", cipher_text(text, key))
     else:
         print("Usage: python caesar.py k")
+        exit(1)
 
 
 if __name__ == "__main__":
