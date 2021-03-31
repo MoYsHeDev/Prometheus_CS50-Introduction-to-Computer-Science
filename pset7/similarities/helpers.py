@@ -36,5 +36,3 @@ def substrings(a: str, b: str, n: int) -> set & set:
     b_substrings = set(substring_tokenizer(b, n))
 
     return a_substrings and b_substrings
-
-
